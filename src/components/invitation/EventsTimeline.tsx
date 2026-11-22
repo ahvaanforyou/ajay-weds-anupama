@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { weddingConfig } from "@/data/wedding-data";
 import { FloralDivider } from "../traditional/OrnamentalBorders";
-import { Calendar, Clock, ExternalLink, MapPin } from "lucide-react";
+import { Calendar, Clock, MapPin } from "lucide-react";
 
 const FootprintPair: React.FC<{ className?: string; style?: React.CSSProperties }> = ({ className = "", style }) => (
   <svg aria-hidden="true" focusable="false" viewBox="0 0 36 48" className={className} style={style}>
@@ -298,21 +298,6 @@ export const EventsTimeline: React.FC = () => {
                       <span>{event.venue}</span>
                     </p>
                   </div>
-
-                  {eventMapUrl && (
-                    <div className="mt-3 flex flex-wrap items-center justify-center gap-2">
-                    <a
-                      href={eventMapUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-1 rounded-full border border-[#C9A45C] px-3 py-1.5 font-serif-royal text-[10px] font-semibold uppercase tracking-wider text-[#8B1E2D] transition-colors hover:bg-[#6D1429] hover:text-[#FFF8E9] sm:text-[11px]"
-                    >
-                      <MapPin className="h-3 w-3" />
-                      <span>View Map</span>
-                      <ExternalLink className="h-2.5 w-2.5" />
-                    </a>
-                    </div>
-                  )}
                 </motion.div>
               </div>
             );
@@ -358,11 +343,6 @@ export const EventsTimeline: React.FC = () => {
                   <div className="mt-2 text-[11px] leading-snug text-[#736044]">
                     <p className={`flex items-start gap-1.5 font-semibold text-[#6D1429] ${isEven ? "justify-start" : "justify-end"}`}><MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#9A7730]" /><span>{event.venue}</span></p>
                   </div>
-                  {eventMapUrl && <div className={`mt-3 flex flex-wrap gap-2 ${isEven ? "justify-start" : "justify-end"}`}>
-                    <a href={eventMapUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-9 items-center justify-center gap-1 rounded-full border border-[#C9A45C] px-3 py-1.5 font-serif-royal text-[10px] font-semibold uppercase tracking-wide text-[#8B1E2D]">
-                      <MapPin className="h-3 w-3" /><span>View Map</span><ExternalLink className="h-2.5 w-2.5" />
-                    </a>
-                  </div>}
                 </motion.div>
                 <div className={`flex min-w-0 flex-col items-center gap-2 ${isEven ? "col-start-2 row-start-1" : "col-start-1 row-start-1"}`}>
                   <span data-event-marker={index} aria-hidden="true" className={`relative z-30 flex h-8 w-8 items-center justify-center rounded-full border-2 border-[#C9A45C] bg-[#FFF8E9] shadow-sm ${event.isMainEvent ? "text-[#FFF8E9]" : "text-[#8B1E2D]"}`}>

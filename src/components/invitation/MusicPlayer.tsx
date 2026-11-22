@@ -63,7 +63,16 @@ export const MusicPlayer = forwardRef<MusicPlayerHandle>((_props, ref) => {
 
   return (
     <>
-      <audio ref={audioRef} src={weddingConfig.audio.src} preload="none" loop aria-hidden="true" className="hidden" />
+      <audio
+        ref={audioRef}
+        preload="auto"
+        loop
+        aria-hidden="true"
+        className="hidden"
+      >
+        <source src={weddingConfig.audio.src} type="audio/mpeg" />
+        <source src="/audio/wedding-bgm.mpeg" type="audio/mpeg" />
+      </audio>
       <button
         type="button"
         onClick={toggleMusic}
