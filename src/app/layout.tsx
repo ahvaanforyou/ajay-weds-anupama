@@ -32,18 +32,18 @@ const plusJakarta = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ajay-weds-anupama.vercel.app"),
-  title: "Ajay Kumar & Anupama — South Indian Wedding Celebration | కల్యాణ వైభోగమే",
+  title: "Ajay & Anupama — South Indian Wedding Celebration | కల్యాణ వైభోగమే",
   description:
-    "We cordially invite you to celebrate the sacred traditional Telugu Hindu wedding of Ajay Kumar and Anupama on Saturday, December 12, 2026 at GK Convention Hall, Eluru.",
+    "We cordially invite you to celebrate the sacred traditional Telugu Hindu wedding of Ajay and Anupama on Saturday, December 12, 2026 at GK Convention Hall, Eluru.",
   openGraph: {
-    title: "Ajay Kumar & Anupama | Traditional Wedding Invitation",
+    title: "Ajay & Anupama | Traditional Wedding Invitation",
     description: "॥ శ్రీ గణేశాయ నమః ॥ You are cordially invited to celebrate our wedding at GK Convention Hall, Eluru.",
     images: [
       {
         url: "/images/og-wedding-card.jpg",
         width: 1200,
         height: 630,
-        alt: "Ajay Kumar & Anupama Wedding Invitation",
+        alt: "Ajay & Anupama Wedding Invitation",
       },
     ],
     type: "website",

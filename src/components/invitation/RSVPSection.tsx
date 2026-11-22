@@ -8,11 +8,18 @@ import { CornerOrnament, FloralDivider } from "../traditional/OrnamentalBorders"
 
 export const RSVPSection: React.FC = () => {
   const { rsvp, events } = weddingConfig;
+  const rsvpEvents = events.filter(
+    (e) =>
+      e.isMainEvent ||
+      e.id === "event-muhurtham" ||
+      e.title.toLowerCase().includes("marriage") ||
+      e.title.toLowerCase().includes("vivaham")
+  );
   const maxGuestCount = Math.max(1, Math.floor(rsvp.maxGuests));
   const [fullName, setFullName] = useState("");
   const [attendance, setAttendance] = useState<"attending" | "declining">("attending");
   const [guestCount, setGuestCount] = useState(() => Math.min(2, maxGuestCount));
-  const [selectedEvents, setSelectedEvents] = useState<string[]>(() => events.map((event) => event.id));
+  const [selectedEvents, setSelectedEvents] = useState<string[]>(() => rsvpEvents.map((event) => event.id));
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -230,11 +237,11 @@ export const RSVPSection: React.FC = () => {
 
                     <fieldset>
                       <legend className="mb-1.5 font-serif-royal text-sm font-bold uppercase leading-snug tracking-wide text-[#6D1429] sm:text-base">
-                        Which Ceremonies Will You Attend?
+                        Ceremony You Will Attend
                       </legend>
-                      {events.length > 0 ? (
+                      {rsvpEvents.length > 0 ? (
                         <div className="space-y-1.5">
-                          {events.map((weddingEvent) => {
+                          {rsvpEvents.map((weddingEvent) => {
                             const isSelected = selectedEvents.includes(weddingEvent.id);
                             const eventInputId = `event-${weddingEvent.id}`;
                             return (
@@ -245,7 +252,7 @@ export const RSVPSection: React.FC = () => {
                               >
                                 <span className="min-w-0 flex-1">
                                   <span className="font-serif-royal block break-words text-xs font-bold leading-snug text-[#6D1429] sm:text-sm">
-                                    {weddingEvent.title}
+                                    Marriage (Pradhana Vivaham &amp; Sumuhurtham)
                                   </span>
                                   <span className="mt-0.5 block break-words text-[11px] leading-snug text-[#8B1E2D]/80 sm:text-xs">
                                     {weddingEvent.date} <span aria-hidden="true">·</span> {weddingEvent.time}
@@ -259,7 +266,7 @@ export const RSVPSection: React.FC = () => {
                                   checked={isSelected}
                                   onChange={() => handleEventToggle(weddingEvent.id)}
                                   className="h-3.5 w-3.5 shrink-0 accent-[#8B1E2D] focus-visible:outline-none"
-                                  aria-label={`Attend ${weddingEvent.title}`}
+                                  aria-label="Attend Marriage"
                                 />
                               </label>
                             );

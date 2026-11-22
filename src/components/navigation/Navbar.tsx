@@ -16,8 +16,8 @@ export const Navbar: React.FC = () => {
       { id: "couple", label: "Our Story", telugu: "వధూవరులు" },
       { id: "countdown", label: "Countdown", telugu: "శుభవేళ" },
       { id: "events", label: "Events", telugu: "వేడుకలు" },
-      { id: "gallery", label: "Gallery", telugu: "చిత్రమాలిక" },
       { id: "venue", label: "Venue", telugu: "వేదిక" },
+      { id: "saptapadi", label: "Saptapadi", telugu: "సప్తపది" },
       ...(weddingConfig.rsvp.enabled ? [{ id: "rsvp", label: "RSVP", telugu: "ఆహ్వానం" }] : []),
     ],
     []
@@ -78,7 +78,7 @@ export const Navbar: React.FC = () => {
           </div>
           <div>
             <span className="font-serif-royal text-sm sm:text-base font-bold text-[#6D1429] tracking-wider block">
-              {weddingConfig.couple.bride.name} &amp; {weddingConfig.couple.groom.name}
+              {weddingConfig.couple.groom.name} &amp; {weddingConfig.couple.bride.name}
             </span>
             <span className="font-telugu text-[10px] text-[#8B1E2D] block -mt-0.5">
               కల్యాణ వైభోగమే

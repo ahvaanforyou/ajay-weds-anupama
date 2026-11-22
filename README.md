@@ -1,6 +1,6 @@
-# Ajay Kumar & Anupama Wedding Invitation
+# Ajay & Anupama Wedding Invitation
 
-Traditional South Indian Telugu Hindu Wedding Website for **Ajay Kumar & Anupama**.
+Traditional South Indian Telugu Hindu Wedding Website for **Ajay & Anupama**.
 
 - **Sumuhurtham**: Saturday, December 12, 2026 at 8:26 PM
 - **Venue**: GK Convention Hall, Nuzvid Eluru Road, Dondapudi, Duggirala, Eluru, Andhra Pradesh - 534003

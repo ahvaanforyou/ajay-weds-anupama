@@ -15,7 +15,7 @@ export const VenueSection: React.FC = () => {
 
   const getGoogleCalendarUrl = () => {
     const text = encodeURIComponent(
-      `Wedding Ceremony: ${weddingConfig.couple.bride.name} & ${weddingConfig.couple.groom.name} (Sumuhurtham)`
+      `Wedding Ceremony: ${weddingConfig.couple.groom.name} & ${weddingConfig.couple.bride.name} (Sumuhurtham)`
     );
     const details = encodeURIComponent(
       `Join us for the sacred wedding ceremony.\\nMuhurtham: ${weddingDateTime.muhurthamTime}\\nVenue: ${venue.name}\\n${venue.address}`

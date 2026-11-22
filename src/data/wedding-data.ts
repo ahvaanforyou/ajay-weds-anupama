@@ -25,18 +25,10 @@ export interface WeddingEvent {
   icon: "kalash" | "mehendi" | "mandapam" | "reception";
 }
 
-export interface GalleryPhoto {
-  id: string;
-  src: string;
-  caption: string;
-  category: "all" | "traditional" | "pre-wedding" | "candid";
-  aspect: "portrait" | "landscape" | "square";
-}
-
 export interface WeddingConfig {
   couple: {
-    bride: CouplePerson;
     groom: CouplePerson;
+    bride: CouplePerson;
   };
   shlokas: {
     sanskritGanesha: string;
@@ -67,7 +59,6 @@ export interface WeddingConfig {
     parkingNotes?: string;
     showMapEmbed: boolean;
   };
-  gallery: GalleryPhoto[];
   rsvp: {
     enabled: boolean;
     deadline?: string;
@@ -85,6 +76,15 @@ export interface WeddingConfig {
 
 export const weddingConfig: WeddingConfig = {
   couple: {
+    groom: {
+      name: "Ajay",
+      teluguName: "అజయ్",
+      role: "Meet the Groom",
+      parents: "Smt. Rani & Sri Narasimharao",
+      education: "Chartered Accountant",
+      description: "Chartered Accountant",
+      image: "/images/groom.jpg",
+    },
     bride: {
       name: "Anupama",
       teluguName: "అనుపమ",
@@ -93,15 +93,6 @@ export const weddingConfig: WeddingConfig = {
       education: "M.Sc (Com)",
       description: "M.Sc (Com)",
       image: "/images/bride.jpg",
-    },
-    groom: {
-      name: "Ajay Kumar",
-      teluguName: "అజయ్ కుమార్",
-      role: "Meet the Groom",
-      parents: "Smt. Rani & Sri Narasimharao",
-      education: "Chartered Accountant",
-      description: "Chartered Accountant",
-      image: "/images/groom.jpg",
     },
   },
   shlokas: {
@@ -122,32 +113,31 @@ export const weddingConfig: WeddingConfig = {
   },
   events: [
     {
-      id: "event-pellikuthuru",
-      title: "Pellikuthuru & Pellikoduku",
-      teluguTitle: "పెళ్లికూతురు / పెళ్లికొడుకు",
+      id: "event-pellikoduku-pellikuturu",
+      title: "Pellikoduku & Pellikuthuru",
+      teluguTitle: "పెళ్లికొడుకు & పెళ్లికూతురు",
       date: "Thursday, December 10, 2026",
-      time: "9:00 AM onwards",
-      venue: "Bride & Groom Residences",
-      address: "Eluru, Andhra Pradesh",
+      time: "6:00 AM",
+      venue: "At our residences",
+      address: "Residences of Ajay & Anupama",
       description:
-        "The sacred Nalugu, turmeric and mangala snaanam ceremony where the bride and groom are lovingly anointed with holy oils and blessed by elders.",
+        "The sacred Nalugu, turmeric and mangala snaanam ceremony where the groom and bride are lovingly anointed with holy oils and blessed by elders.",
       dressCode: "Traditional Yellow / Pattu Silks",
       googleMapsUrl: "https://maps.google.com/?q=Eluru+Andhra+Pradesh",
       icon: "kalash",
     },
     {
-      id: "event-mehendi",
-      title: "Mehendi & Sangeet Sandhya",
-      teluguTitle: "మెహందీ & సంగీత్ వేడుక",
-      date: "Friday, December 11, 2026",
-      time: "6:30 PM onwards",
-      venue: "GK Convention Lawns",
-      address: "Nuzvid Eluru Road, Dondapudi, Duggirala, Eluru",
+      id: "event-haldi",
+      title: "Haldi Ceremony",
+      teluguTitle: "పసుపు వేడుక (హల్దీ)",
+      date: "Thursday, December 10, 2026",
+      time: "6:00 PM",
+      venue: "At our residences",
+      address: "Residences of Ajay & Anupama",
       description:
-        "An enchanting evening of intricate henna artistry, joyous South Indian folk dances, musical celebrations, and delectable delicacies.",
-      dressCode: "Vibrant Festive Pastels & Ethnic Wear",
-      googleMapsUrl:
-        "https://maps.google.com/?q=GK+Convention+Hall+Nuzvid+Eluru+Road+Dondapudi+Duggirala+Eluru+Andhra+Pradesh+534003",
+        "A radiant and joyful celebration of auspicious turmeric, love, folk songs, and blessings with family and close friends.",
+      dressCode: "Festive Yellow / Ethnic Attire",
+      googleMapsUrl: "https://maps.google.com/?q=Eluru+Andhra+Pradesh",
       icon: "mehendi",
     },
     {
@@ -167,22 +157,6 @@ export const weddingConfig: WeddingConfig = {
         "https://maps.google.com/?q=GK+Convention+Hall+Nuzvid+Eluru+Road+Dondapudi+Duggirala+Eluru+Andhra+Pradesh+534003",
       icon: "mandapam",
     },
-    {
-      id: "event-reception",
-      title: "Wedding Reception",
-      teluguTitle: "శుభ పరిణయ విందు (రిసెప్షన్)",
-      date: "Sunday, December 13, 2026",
-      time: "7:00 PM onwards",
-      venue: "GK Convention Hall",
-      address:
-        "Nuzvid Eluru Road, Dondapudi, Duggirala, Eluru, Andhra Pradesh - 534003",
-      description:
-        "An evening of celebration, banquet dinner, and warm congratulations with family and dear friends.",
-      dressCode: "Royal Ethnic / Elegant Formal Attire",
-      googleMapsUrl:
-        "https://maps.google.com/?q=GK+Convention+Hall+Nuzvid+Eluru+Road+Dondapudi+Duggirala+Eluru+Andhra+Pradesh+534003",
-      icon: "reception",
-    },
   ],
   venue: {
     name: "GK Convention Hall",
@@ -200,64 +174,6 @@ export const weddingConfig: WeddingConfig = {
       "Ample dedicated parking space available for all wedding guests at the convention hall premises.",
     showMapEmbed: true,
   },
-  gallery: [
-    {
-      id: "photo-1",
-      src: "/images/gallery-1.jpg",
-      caption: "Sacred Jeelakarra Bellam — Auspicious Muhurtham Moment",
-      category: "traditional",
-      aspect: "landscape",
-    },
-    {
-      id: "photo-2",
-      src: "/images/gallery-2.jpg",
-      caption: "Bride in Traditional Kanchipuram Gold Silk Pattu",
-      category: "traditional",
-      aspect: "portrait",
-    },
-    {
-      id: "photo-3",
-      src: "/images/gallery-3.jpg",
-      caption: "Pre-wedding Sunset by the Scenic Waters",
-      category: "pre-wedding",
-      aspect: "portrait",
-    },
-    {
-      id: "photo-4",
-      src: "/images/gallery-4.jpg",
-      caption: "Laughter and Turmeric during Nalugu Ceremonies",
-      category: "candid",
-      aspect: "landscape",
-    },
-    {
-      id: "photo-5",
-      src: "/images/gallery-5.jpg",
-      caption: "Groom in Regal Raw Silk Dhoti and Golden Angavastram",
-      category: "traditional",
-      aspect: "portrait",
-    },
-    {
-      id: "photo-6",
-      src: "/images/gallery-6.jpg",
-      caption: "Together into a Lifetime of Adventures",
-      category: "pre-wedding",
-      aspect: "landscape",
-    },
-    {
-      id: "photo-7",
-      src: "/images/gallery-7.jpg",
-      caption: "Mehendi Hues & Sangeet Celebrations",
-      category: "candid",
-      aspect: "square",
-    },
-    {
-      id: "photo-8",
-      src: "/images/gallery-8.jpg",
-      caption: "Saptapadi — Seven Sacred Steps around the Agni",
-      category: "traditional",
-      aspect: "landscape",
-    },
-  ],
   rsvp: {
     enabled: true,
     deadline: "December 08, 2026",

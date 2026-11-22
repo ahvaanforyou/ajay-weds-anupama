@@ -7,8 +7,8 @@ import { WeddingHero } from "@/components/invitation/WeddingHero";
 import { CoupleSection } from "@/components/invitation/CoupleSection";
 import { CountdownSection } from "@/components/invitation/CountdownSection";
 import { EventsTimeline } from "@/components/invitation/EventsTimeline";
-import { PhotoGallery } from "@/components/invitation/PhotoGallery";
 import { VenueSection } from "@/components/invitation/VenueSection";
+import { SaptapadiSection } from "@/components/invitation/SaptapadiSection";
 import { RSVPSection } from "@/components/invitation/RSVPSection";
 import { WeddingFooter } from "@/components/invitation/WeddingFooter";
 import { MusicPlayer, type MusicPlayerHandle } from "@/components/invitation/MusicPlayer";
@@ -44,8 +44,8 @@ export default function WeddingPage() {
       <CoupleSection />
       <CountdownSection />
       <EventsTimeline />
-      <PhotoGallery />
       <VenueSection />
+      <SaptapadiSection />
       <RSVPSection />
       <WeddingFooter />
 

@@ -42,7 +42,7 @@ export const WeddingFooter: React.FC = () => {
 
         {/* Couple Names */}
         <h3 className="font-serif-royal text-3xl sm:text-4xl font-extrabold text-[#6D1429] tracking-wide">
-          {couple.bride.name} & {couple.groom.name}
+          {couple.groom.name} &amp; {couple.bride.name}
         </h3>
 
         {/* Date */}
