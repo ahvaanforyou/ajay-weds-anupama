@@ -181,6 +181,7 @@ export const weddingConfig: WeddingConfig = {
     maxGuests: 6,
     contactPhone: "+91 98765 43210",
     contactEmail: "celebrate@ajay-anupama.com",
+    googleSheetWebhookUrl: "https://script.google.com/macros/s/AKfycbzPZQ-zAk_fwE75c9SzackBxw7JwxXR3MItIXIh7NNVO4JxMsKlzBbbL3CqOuJDgQVG/exec",
   },
   audio: {
     enabled: true,

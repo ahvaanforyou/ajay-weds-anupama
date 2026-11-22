@@ -44,12 +44,15 @@ This guide explains how to connect your website's RSVP form directly to a **Goog
 5. Copy the generated **Web App URL** (starts with `https://script.google.com/macros/s/.../exec`).
 
 #### Step 6: Connect to Website
-Paste your Web App URL into `src/data/wedding-data.ts`:
+The Web App URL has been connected into `src/data/wedding-data.ts`:
 ```typescript
 rsvp: {
   enabled: true,
-  googleSheetWebhookUrl: "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec",
-  // ...
+  deadline: "December 08, 2026",
+  maxGuests: 6,
+  contactPhone: "+91 98765 43210",
+  contactEmail: "celebrate@ajay-anupama.com",
+  googleSheetWebhookUrl: "https://script.google.com/macros/s/AKfycbzPZQ-zAk_fwE75c9SzackBxw7JwxXR3MItIXIh7NNVO4JxMsKlzBbbL3CqOuJDgQVG/exec",
 }
 ```
 All RSVP submissions from the live website are now automatically recorded and updated directly in your Google Sheet in real time!
