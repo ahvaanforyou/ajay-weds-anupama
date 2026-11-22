@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { weddingConfig } from "@/data/wedding-data";
 import { FloralDivider } from "../traditional/OrnamentalBorders";
 import { KalashIcon } from "../traditional/KalashIcon";
-import { ArrowUp, Heart, Share2, Copy, Check } from "lucide-react";
+import { ArrowUp, Share2, Copy, Check } from "lucide-react";
 
 export const WeddingFooter: React.FC = () => {
   const { couple, weddingDateTime, shlokas, venue } = weddingConfig;
@@ -94,13 +94,6 @@ export const WeddingFooter: React.FC = () => {
             <span>Back to Top</span>
             <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform" />
           </button>
-        </div>
-
-        {/* Subtle Made with Love Line */}
-        <div className="mt-8 text-xs text-[#8B1E2D]/60 flex items-center justify-center space-x-1 font-serif-royal">
-          <span>Crafted with</span>
-          <Heart className="w-3 h-3 text-[#8B1E2D] fill-[#8B1E2D]" />
-          <span>for a Traditional South Indian Wedding Celebration</span>
         </div>
       </div>
     </footer>
