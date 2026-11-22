@@ -65,6 +65,7 @@ export interface WeddingConfig {
     maxGuests: number;
     contactPhone?: string;
     contactEmail?: string;
+    googleSheetWebhookUrl?: string;
   };
   audio: {
     enabled: boolean;

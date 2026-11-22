@@ -1,16 +1,31 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { weddingConfig } from "@/data/wedding-data";
 import { FloralDivider } from "../traditional/OrnamentalBorders";
 import { KalashIcon } from "../traditional/KalashIcon";
-import { ArrowUp, Heart } from "lucide-react";
+import { ArrowUp, Heart, Share2, Copy, Check } from "lucide-react";
 
 export const WeddingFooter: React.FC = () => {
-  const { couple, weddingDateTime, shlokas } = weddingConfig;
+  const { couple, weddingDateTime, shlokas, venue } = weddingConfig;
+  const [copied, setCopied] = useState(false);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleShareWhatsApp = () => {
+    const shareText = encodeURIComponent(
+      `॥ శ్రీ గణేశాయ నమః ॥\n\nWe joyfully invite you and your family to celebrate the wedding ceremony of *${couple.groom.name} & ${couple.bride.name}*.\n\n🗓️ *Date:* ${weddingDateTime.dateFormatted}\n⏰ *Sumuhurtham:* ${weddingDateTime.muhurthamTime}\n📍 *Venue:* ${venue.name}, ${venue.city}\n\nView the Wedding Invitation & Details:\nhttps://ajay-weds-anupama.vercel.app`
+    );
+    window.open(`https://api.whatsapp.com/send?text=${shareText}`, "_blank");
+  };
+
+  const handleCopyLink = () => {
+    navigator.clipboard?.writeText("https://ajay-weds-anupama.vercel.app").then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    });
   };
 
   return (
@@ -49,6 +64,24 @@ export const WeddingFooter: React.FC = () => {
         <p className="font-serif-royal text-sm text-[#8B1E2D] font-medium tracking-wider mt-2">
           {weddingDateTime.dateFormatted} • {weddingConfig.venue.city}
         </p>
+
+        {/* Quick Action Share Row */}
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
+          <button
+            onClick={handleShareWhatsApp}
+            className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full bg-[#25D366] text-white text-xs font-serif-royal font-semibold hover:bg-[#1EBE5D] transition-colors shadow-md cursor-pointer"
+          >
+            <Share2 className="w-4 h-4" />
+            <span>Share on WhatsApp</span>
+          </button>
+          <button
+            onClick={handleCopyLink}
+            className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full border border-[#C9A45C] bg-[#FFFDF8] text-[#8B1E2D] text-xs font-serif-royal font-semibold hover:bg-[#F5EBD8] transition-colors shadow-sm cursor-pointer"
+          >
+            {copied ? <Check className="w-4 h-4 text-green-700" /> : <Copy className="w-4 h-4" />}
+            <span>{copied ? "Link Copied!" : "Copy Link"}</span>
+          </button>
+        </div>
 
         <FloralDivider theme="maroon" className="my-8" />
 

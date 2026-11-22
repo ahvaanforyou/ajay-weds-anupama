@@ -54,17 +54,43 @@ export const RSVPSection: React.FC = () => {
     isSubmittingRef.current = true;
     setIsSubmitting(true);
     try {
-      const savedValue = JSON.parse(localStorage.getItem("wedding_rsvps") || "[]");
-      const existing = Array.isArray(savedValue) ? savedValue : [];
-      existing.push({
+      const guestEntry = {
         name,
+        fullName: name,
         attendance,
+        status: attendance === "attending" ? "Attending" : "Declined",
         guestCount: attendance === "attending" ? Math.min(guestCount, maxGuestCount) : 0,
-        events: attendance === "attending" ? selectedEvents : [],
+        events:
+          attendance === "attending"
+            ? selectedEvents
+                .map((id) => {
+                  const ev = events.find((e) => e.id === id);
+                  return ev ? ev.title : id;
+                })
+                .join(", ")
+            : "—",
         message: message.trim(),
         timestamp: new Date().toISOString(),
-      });
+      };
+
+      const savedValue = JSON.parse(localStorage.getItem("wedding_rsvps") || "[]");
+      const existing = Array.isArray(savedValue) ? savedValue : [];
+      existing.push(guestEntry);
       localStorage.setItem("wedding_rsvps", JSON.stringify(existing));
+
+      if (rsvp.googleSheetWebhookUrl) {
+        try {
+          fetch(rsvp.googleSheetWebhookUrl, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify(guestEntry),
+          }).catch(() => {});
+        } catch {
+          // Non-blocking
+        }
+      }
+
       window.setTimeout(() => {
         isSubmittingRef.current = false;
         setIsSubmitting(false);

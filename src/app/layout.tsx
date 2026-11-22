@@ -34,19 +34,36 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://ajay-weds-anupama.vercel.app"),
   title: "Ajay & Anupama — South Indian Wedding Celebration | కల్యాణ వైభోగమే",
   description:
-    "We cordially invite you to celebrate the sacred traditional Telugu Hindu wedding of Ajay and Anupama on Saturday, December 12, 2026 at GK Convention Hall, Eluru.",
+    "॥ శ్రీ గణేశాయ నమః ॥ We cordially invite you to celebrate the traditional Telugu Hindu wedding of Ajay and Anupama on Saturday, December 12, 2026 at GK Convention Hall, Eluru.",
   openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://ajay-weds-anupama.vercel.app",
+    siteName: "Ajay & Anupama Wedding Celebration",
     title: "Ajay & Anupama | Traditional Wedding Invitation",
-    description: "॥ శ్రీ గణేశాయ నమః ॥ You are cordially invited to celebrate our wedding at GK Convention Hall, Eluru.",
+    description:
+      "॥ శ్రీ గణేశాయ నమః ॥ We joyfully invite you to celebrate our sacred wedding on Saturday, December 12, 2026 • 8:26 PM at GK Convention Hall, Eluru.",
     images: [
       {
-        url: "/images/og-wedding-card.jpg",
+        url: "https://ajay-weds-anupama.vercel.app/images/ajay-anupama-wedding-share.jpg",
+        secureUrl: "https://ajay-weds-anupama.vercel.app/images/ajay-anupama-wedding-share.jpg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "Ajay & Anupama Wedding Invitation",
       },
     ],
-    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ajay & Anupama | Traditional Wedding Invitation",
+    description:
+      "॥ శ్రీ గణేశాయ నమః ॥ We joyfully invite you to celebrate our wedding on Saturday, December 12, 2026 at GK Convention Hall, Eluru.",
+    images: ["https://ajay-weds-anupama.vercel.app/images/ajay-anupama-wedding-share.jpg"],
+  },
+  other: {
+    image_src: "https://ajay-weds-anupama.vercel.app/images/ajay-anupama-wedding-share.jpg",
+    "theme-color": "#6D1429",
   },
 };
 
