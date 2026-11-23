@@ -31,23 +31,23 @@ const plusJakarta = localFont({
 });
 
 const siteUrl = "https://ajay-weds-anupama.vercel.app";
-const shareImageUrl = `${siteUrl}/images/ajay-anupama-wedding-share.jpg?v=3`;
-const shareSquareUrl = `${siteUrl}/images/ajay-anupama-wedding-square.jpg?v=3`;
-const shareTitle = "Ajay & Anupama — Wedding Invitation | Dec 12, 2026";
+const shareImageUrl = `${siteUrl}/images/ajay-anupama-wedding-share.jpg?v=5`;
+const shareSquareUrl = `${siteUrl}/images/ajay-anupama-wedding-square.jpg?v=5`;
+const shareTitle = "Ajay Kumar & Anupama — Wedding Invitation | Dec 12, 2026";
 const shareDescription =
-  "We joyfully invite you and your family to celebrate the sacred wedding of Ajay and Anupama on Saturday, December 12, 2026 at GK Convention Hall, Eluru.";
+  "We joyfully invite you and your family to celebrate the sacred wedding of Ajay Kumar and Anupama on Saturday, December 12, 2026 at GK Convention Hall, Eluru.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: shareTitle,
   description: shareDescription,
-  applicationName: "Ajay & Anupama Wedding",
-  authors: [{ name: "Ajay & Anupama" }],
-  creator: "Ajay & Anupama",
-  publisher: "Ajay & Anupama",
+  applicationName: "Ajay Kumar & Anupama Wedding",
+  authors: [{ name: "Ajay Kumar & Anupama" }],
+  creator: "Ajay Kumar & Anupama",
+  publisher: "Ajay Kumar & Anupama",
   keywords: [
-    "Ajay Anupama Wedding",
-    "Ajay weds Anupama",
+    "Ajay Kumar Anupama Wedding",
+    "Ajay Kumar weds Anupama",
     "Telugu Wedding Invitation",
     "GK Convention Hall Eluru",
     "December 12 2026 Wedding",
@@ -56,8 +56,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: siteUrl,
-    siteName: "Ajay & Anupama Wedding Celebration",
-    title: "Ajay & Anupama — Wedding Invitation",
+    siteName: "Ajay Kumar & Anupama Wedding Celebration",
+    title: "Ajay Kumar & Anupama — Wedding Invitation",
     description: shareDescription,
     images: [
       {
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: "image/jpeg",
-        alt: "Ajay & Anupama Wedding Invitation",
+        alt: "Ajay Kumar & Anupama Wedding Invitation",
       },
       {
         url: shareSquareUrl,
@@ -74,13 +74,13 @@ export const metadata: Metadata = {
         width: 600,
         height: 600,
         type: "image/jpeg",
-        alt: "Ajay & Anupama Wedding Invitation",
+        alt: "Ajay Kumar & Anupama Wedding Invitation",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ajay & Anupama — Wedding Invitation",
+    title: "Ajay Kumar & Anupama — Wedding Invitation",
     description: shareDescription,
     images: [shareImageUrl],
   },
@@ -108,15 +108,15 @@ export default function RootLayout({
         {/* Open Graph / Facebook / WhatsApp */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={siteUrl} />
-        <meta property="og:site_name" content="Ajay & Anupama Wedding Celebration" />
-        <meta property="og:title" content="Ajay & Anupama — Wedding Invitation" />
+        <meta property="og:site_name" content="Ajay Kumar & Anupama Wedding Celebration" />
+        <meta property="og:title" content="Ajay Kumar & Anupama — Wedding Invitation" />
         <meta property="og:description" content={shareDescription} />
         <meta property="og:image" content={shareImageUrl} />
         <meta property="og:image:secure_url" content={shareImageUrl} />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Ajay & Anupama Wedding Invitation" />
+        <meta property="og:image:alt" content="Ajay Kumar & Anupama Wedding Invitation" />
         <meta property="og:locale" content="en_IN" />
 
         {/* Legacy Scrapers & WhatsApp Image Fallback */}
@@ -125,7 +125,7 @@ export default function RootLayout({
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content={siteUrl} />
-        <meta name="twitter:title" content="Ajay & Anupama — Wedding Invitation" />
+        <meta name="twitter:title" content="Ajay Kumar & Anupama — Wedding Invitation" />
         <meta name="twitter:description" content={shareDescription} />
         <meta name="twitter:image" content={shareImageUrl} />
 

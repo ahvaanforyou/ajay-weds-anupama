@@ -78,12 +78,11 @@ export interface WeddingConfig {
 export const weddingConfig: WeddingConfig = {
   couple: {
     groom: {
-      name: "Ajay",
-      teluguName: "అజయ్",
+      name: "Ajay Kumar",
+      teluguName: "అజయ్ కుమార్",
       role: "Meet the Groom",
       parents: "Smt. Rani & Sri Narasimharao",
       education: "Chartered Accountant",
-      description: "Chartered Accountant",
       image: "/images/groom.jpg",
     },
     bride: {
@@ -92,7 +91,6 @@ export const weddingConfig: WeddingConfig = {
       role: "Meet the Bride",
       parents: "Smt. Siva Parvathi & Sri Anjaneyulu",
       education: "M.Sc (Com)",
-      description: "M.Sc (Com)",
       image: "/images/bride.jpg",
     },
   },
