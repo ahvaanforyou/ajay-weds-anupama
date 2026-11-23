@@ -1,5 +1,6 @@
 export interface CouplePerson {
   name: string;
+  heroName?: string;
   teluguName: string;
   role: string;
   parents: string;
@@ -78,8 +79,9 @@ export interface WeddingConfig {
 export const weddingConfig: WeddingConfig = {
   couple: {
     groom: {
-      name: "Ajay Kumar",
-      teluguName: "అజయ్ కుమార్",
+      name: "Ajay",
+      heroName: "Ajay Kumar",
+      teluguName: "అజయ్",
       role: "Meet the Groom",
       parents: "Smt. Rani & Sri Narasimharao",
       education: "Chartered Accountant",

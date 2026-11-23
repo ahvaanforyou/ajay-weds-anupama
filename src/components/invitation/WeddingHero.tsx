@@ -81,7 +81,7 @@ export const WeddingHero: React.FC = () => {
               className="my-2 sm:my-3"
             >
               <h1 className="font-serif-royal text-2xl min-[360px]:text-3xl sm:text-5xl font-extrabold text-[#6D1429] tracking-wide drop-shadow-sm">
-                {weddingConfig.couple.groom.name}
+                {weddingConfig.couple.groom.heroName || weddingConfig.couple.groom.name}
               </h1>
 
               {/* weds emblem */}
